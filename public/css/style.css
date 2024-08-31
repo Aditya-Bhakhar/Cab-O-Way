@@ -1,0 +1,610 @@
+#bg-img{
+    background-image: url(/assects/taxi-bg.jpg);
+    background-attachment: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#bg-img h1{
+    margin-top: 213px;
+    margin-left: 108px;
+    font-size: 3.5rem;
+}
+#bg-img p{
+    margin-left: 108px;
+    font-size: large;
+    font-weight: 500;
+}
+#heading-from{
+    color: black;
+    padding-left: 25%;
+}
+#btn-form{
+    color: white;
+    background-color: #1b1111f0;
+    font-weight: 500;
+    width: 100%;
+    transition: background-color 0.2s ease-in;
+}
+#btn-form:hover{
+    background-color: rgb(252, 146, 54);
+    color: black;
+}
+#form{
+    background-color: #f4f4f4ad;
+    width: 100%;
+}
+#form-box{
+    padding-top: 150px;
+}
+.default-select select{
+    padding: .375rem .5rem;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #ced4da;
+}
+.default-select input{
+    color: rgba(0, 0, 0, 0.6);
+}
+.sec-section{
+    display: flex;
+}
+.ben-box{
+    padding: 65px 20px;
+    background-color: #f4f4f4;
+    margin: 50px 5px ;
+    max-width: 420px;
+    border-bottom: 1px solid #f9d140;
+    transition: background-color 0.8s ease-in;
+}
+.ben-box:hover{
+    background-color: #fcdb65;
+}
+.ben-box:hover .icon i{
+    border: 20px solid white;
+    background-color: white;
+    color: #fcdb65;
+}
+.icon-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.icon-box p{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.icon i{
+   font-size: 47px;
+   border: 20px solid #fcdb65;
+   background-color: #fcdb65;
+   color: white;
+   border-radius: 50%;
+   transition: color 1s ease;
+}
+.book-now{
+    height: 500px;
+    padding:100px 0;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/bg-details.webp);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-attachment: fixed;
+}
+.book-now h1,h3{
+    line-height: 1.2;
+    font-weight: 500;
+}
+#book-btn{
+    font-weight: 600;
+    color: #f4f4f4;
+    background-color: #f9d140;
+    font-size: 5;
+    margin-top: 25px;
+    transition: background-color 0.8s ease;
+    /* text-white bg-warning fs-5 mt-4 rounded */
+}
+#book-btn:hover{
+    background-color: #f4f4f4;
+    color: #765f0d;
+}
+.cust-box{
+    background-color: #feea9f;
+    width: 33%;
+    margin: 25px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    transition: background-color 0.8s ease;
+}
+.cust-box:hover{
+    background-color: white;
+    border: 2px solid #f9d140;
+}
+.cust-box img{
+    width: 200px;
+    border: 2px solid orange;
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+}
+#footer{
+    /* height: 50vh; */
+    background-color: #333;
+    width: 100%;
+}
+#copywrite{
+    background-color: black;
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec-section{
+    width: 100%;
+}
+@media (max-width:768px) {
+    #main-img{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    } 
+    #bg-img{
+        height: 800px;
+    }
+    #bg-img h1{
+        margin-top: 13px;
+        margin-left: 10px;
+        font-size: 2.5rem;
+    }
+    #bg-img p{
+        margin-left: 10px;
+        font-size: 1rem;
+    }
+    #form-box{
+        padding-top: 10px;
+    }
+    .ben-box{
+        margin: 25px 5px;
+        width: 100%;
+    }
+    .review-box{
+        flex-direction: column;
+    }
+    .cust-box{
+        width: 98%;
+    }
+    .sec-section{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+
+/* Contact Page Css */
+
+#contact-banner{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/handshake.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+#contact-form{
+    width: 50%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+#contact-form form button{
+    transition: background-color 1s ease;
+    border: none;
+}
+#contact-form form button:hover{
+    background-color: black;
+}
+@media (max-width:768px) {
+    #contact-form{
+        width: 80%;
+    }
+}
+/* Book now page */
+#booknow-banner{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/booking.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+#booknow-container{
+    display: flex;
+    padding-top: 50px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+#booknow-container form label{
+    font-weight: 500;
+    margin-top: 5px;
+}
+#book-now-btn{
+    width: 100%;
+    transition: background-color 1s ease;
+}
+#book-now-btn:hover{
+    background-color: black;
+}
+#pickuppoint select{
+    width: 23vw;
+    margin-right: 1vw;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    color: rgba(0, 0, 0, 0.6);
+}
+#destination select{
+    width: 23vw;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    color: rgba(0, 0, 0, 0.6);
+}
+#self-drive select{
+    width: 47vw;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    color: rgba(0, 0, 0, 0.6);
+}
+#select-car select{
+    width: 100%;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    color: rgba(0, 0, 0, 0.6);
+}
+@media (max-width:800px) {
+    #booknow-container{
+        width: 90%;
+    }
+}
+
+/* About us page */
+
+#about-banner{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/about.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+#heading-about{
+    height: 30vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+}
+#heading-about h3{
+    font-size: 500;
+    line-height: 1.4;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+#carusal-about{
+    width: 100%;
+    padding-bottom: 15px;
+}
+#carousel-item-1{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/founder.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-left: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    padding-right: 45vw;
+    height: 60vh;
+}
+#carousel-item-1 h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+}
+#carousel-item-2 h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+}
+#carousel-item-3 h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+}
+#carousel-item-3{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/manging-director.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-left: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    padding-right: 45vw;
+    height: 60vh;
+}
+#services{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#services h1{
+    font-weight: 600;
+}
+#services h3{
+    font-weight: 600;
+    color: white;
+}
+.services-box{
+    background-color: #333;
+    color: white;
+    border-radius: 30px;
+    padding: 50px;
+    margin: 20px 30px;
+}
+#services-box :hover{
+    scale: 1.02;
+}
+#services h5{
+    text-align: center;
+}
+
+#customer{
+    /* margin-top: 50px; */
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#customer h1{
+    font-weight: 600;
+}
+#customer-box div{
+    background-color: #f9d140;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 5px 20px;
+}
+#customer-box  :hover{
+    scale: 1.02;
+}
+.black-line{
+    height: 2px;
+    width: 5%;
+    padding: 0 !important;
+    display: flex;
+    align-self: center;
+    margin: 0 !important;
+    justify-content: center;
+}
+#our-aim{
+    display: flex;
+}
+#our-aim img{
+    opacity: 0.9;
+    border-radius: 2%;
+}
+#our-aim img:hover{
+    opacity: 1;
+    scale: 1.01;
+}
+#our-aim div{
+    display: flex;
+    /* position: absolute; */
+    flex-direction: column;
+    align-items: end;
+    z-index: 2;
+    text-align: end;
+    justify-content: center;
+}
+#our-aim div p{
+    background-color: #333;
+    font-size: large;
+    font-weight: 400;
+    padding: 20px;
+    color: #f4f4f4;
+}
+#we-delivier{
+    display: flex;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+#we-delivier img{
+    opacity: 0.9;
+    border-radius: 2%;
+}
+#we-delivier img:hover{
+    opacity: 1;
+    scale: 1.01;
+}
+#we-delivier div{
+    display: flex;
+    /* position: absolute; */
+    flex-direction: column;
+    align-items: start;
+    z-index: 2;
+    text-align: start;
+    justify-content: center;
+}
+#we-delivier div p{
+    background-color: #333;
+    padding: 20px;
+    font-size: large;
+    font-weight: 400;
+    color: #f4f4f4;
+}
+@media (max-width:768px) {
+    #heading-about{
+        width: 70%;
+        margin-top: 25px;
+    }
+    #services-box{
+        flex-direction: column;
+    }
+    #services-box h3{
+        text-align: center;
+    }
+    #our-aim img{
+        display: none;
+    }
+    #we-delivier img{
+        display: none;
+    }
+    #our-aim{
+        margin-top: 50px;
+    }
+    #we-delivier{
+        margin-top: 5px;
+        padding-top: 5px;
+        margin-bottom: 25px;
+    }
+}
+@media (max-width:900px) {
+    #carousel-item-3{
+        padding-right: 5vw;
+    }
+    #carousel-item-2{
+        padding-right: 5vw;
+    }
+    #carousel-item-1{
+        padding-right: 5vw;
+    }
+}
+
+/* Popular fleets page */
+#fleet-banner{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/car.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+#fleet-section{
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    justify-content: center;
+    padding-top: 20px;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.fleet-card{
+    height: fit-content;
+    /* position: relative; */
+    width: 30%;
+    margin-top: 50px;
+    margin-right: 40px;
+    background-color: white;
+    box-shadow: 5px 5px 3px rgb(0 0 0 / 15%), -5px -5px 3px rgb(0 0 0 / 15%);
+    border-radius: 10px;
+}
+.fleet-card:hover{
+    transform: scale(1.02);
+}
+.fleet-card p{
+    background-color: #f9d140;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); 
+    padding: 8px 20px;
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.9;
+}
+.imageContainer{
+    position: relative;
+}
+.fleet-info{
+    background-color: #f9d140;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-weight: 500;
+    border-radius:0 0  10px 10px;
+}
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+}
+/* Style for the modal content */
+.modal-content {
+	background-color: #fefefe;
+	margin: 7% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+/* Style for the close button */
+.close {
+	color: #aaa;
+	float: right;
+    position: absolute;
+    right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+@media (max-width:768px) {
+    .modal-content{
+        margin-top: 10vh;
+    }
+    #fleet-section{
+        margin: 5px
+    }
+    .fleet-card{
+        width: 100%;
+        margin-right: 0;
+        margin-top: 25px;
+    }
+}
+
+/* Packages Page */
+#packages-banner{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/map.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}

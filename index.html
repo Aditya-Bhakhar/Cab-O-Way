@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/x-icon" href="/assects/cab.png">
+  <script src="https://kit.fontawesome.com/6abf38ad41.js" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+  <title>Cab O Way</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
+    <div class="container-fluid ps-5">
+      <a class="navbar-brand ms-5 d-flex align-items-center" id="navbar" href="/">
+        <img src="/assects/cab.png" height="50px" alt="" />
+        <h3>Cab O Way</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link  fs-5" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="fleets">Popular Fleets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="book">Book Now</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="packages">Popluar Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="contact">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="card text-white d-flex" id="bg-img">
+    <!-- <img src="" class="card-img" class="card-img" alt="..." style="opacity: 0.9;"> -->
+    <div class="card-img-overlay">
+      <div class="d-flex" id="main-img">
+        <div class="col-sm-8 mb-2">
+          <h1 class="card-title align-items-center">
+            Book A Cab Online Starts <br />
+            From ₹8/Per Km
+          </h1>
+          <p class="card-text">
+            Choose from a wide variety of cars and book your ride for one-way, round-trip or <br>self-drive options at affordable rates. Enjoy the comfort of well-maintained and top-quality cars.
+          </p>
+        </div>
+        <div class="col-sm-4 mt-auto" id="form-box">
+          <form class="d-flex-col form align-items-center p-2 rounded" action="/submit" method="POST" id="form">
+            <div class="from-group d-flex-col align-items-center">
+              <h3 class="align-items-center text-center text-dark">
+                Book a Ride Now
+              </h3>
+              <input class="form-control txt-field my-2" type="text" id="name" required name="name" placeholder="Your name"
+                 />
+              <input class="form-control txt-field my-2" type="email" id="email" required name="email" placeholder="Email address"
+                />
+              <input class="form-control txt-field my-2" type="tel" id="phone" required name="phone" placeholder="Phone number"
+                />
+            </div>
+            <div class="mt-1 mb-1" id="select-car">
+              <select name="car" id="car" required>
+                <option value="" disabled selected hidden>Select Car</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV/MUV</option>
+                <option value="premium">Premium</option>
+                <option value="luxary">Luxary</option>
+              </select>
+            </div>		
+            <div class="" id="pickuppoint">
+              <input class="form-control txt-field my-2" type="text" name="from" placeholder="Starting Destination" id="from" required>
+          </div>
+               <div class=" " id="destination">
+                <input class="form-control txt-field my-2" type="text" name="to" placeholder="Ending Destination" id="to" required>
+          </div>		
+            <div class="form-group">
+              <div class="input-group dates-wrap default-select">
+                <input id="date" type="date" name="date" required class="dates form-control my-2" placeholder="Date & time" type="text" />
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="BOOK YOUR RIDE NOW" class="btn btn-default my-2 btn-block text-center" id="btn-form"> 
+              </input>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Card section starts here -->
+  <section>
+    <div class="container">
+      <div class="sec-section">
+        <div class="col-sm-4 ben-box">
+          <div class="icon-box text-center">
+            <div class="icon">
+              <i class="fa-solid fa-gauge"></i>
+            </div>
+            <h4 class="mt-5 fs-3">Fast & Easy Booking</h4>
+            <hr style="
+                  width: 30%;
+                  height: 3px;
+                  color: #333;
+                  background: #333;
+                  margin-bottom: -10px;
+                " />
+            <hr style="width: 35%; height: 3px; background-color: #f9d140" />
+            <p class="fs-5">
+              You can book a cab online in just 2 minutes. It's easy & simple
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-4 ben-box">
+          <div class="icon-box text-center">
+            <div class="icon">
+              <i class="fa-solid fa-house-user"></i>
+            </div>
+            <h4 class="mt-5 fs-3">Pickup and drop-off service at your doorstep.</h4>
+            <hr style="
+                  width: 30%;
+                  height: 3px;
+                  color: #333;
+                  background: #333;
+                  margin-bottom: -10px;
+                " />
+            <hr style="width: 35%; height: 3px; background-color: #f9d140" />
+            <p class="fs-5">
+              At your doorstep, we offer complimentary pickup and drop-off services.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-4 ben-box">
+          <div class="icon-box text-center">
+            <div class="icon">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+            <h4 class="mt-5 fs-3">No booking Charges</h4>
+            <hr style="
+                  width: 30%;
+                  height: 3px;
+                  color: #333;
+                  background: #333;
+                  margin-bottom: -10px;
+                " />
+            <hr style="width: 35%; height: 3px; background-color: #f9d140" />
+            <p class="fs-5">
+              Simply pay the confirmation fee and reserve your ride with us.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Booking services  -->
+  <div class="container text-center mt-5">
+    <h1>CHOOSE FROM OUR WIDE RANGE OF CARS</h1>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="/assects/car1.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="bg-light">Mahindra Xuv (7 seater)</h5>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="/assects/car2.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="bg-light">Swift Desire (5 seater)</h5>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="/assects/car3.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="bg-light">Mahindra Xuv (7 seater) </h5>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="200000">
+          <img src="/assects/car4.png" class="d-block w-100" alt="..." />
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="bg-light">Ertika (7 seater) </h5>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!--  Book now section -->
+  <div class="book-now text-white text-center">
+    <h1 class="fs-1">
+      Discounts Coupens & <br />
+      Special Offers
+    </h1>
+    <h3 class="mt-5">
+      Rent a Car for 7 Day <br />
+      and get 3 days extra absolutely FREE
+    </h3>
+    <a href="/book" class="btn btn-lg btn-block" id="book-btn">
+      Book Your Ride Now
+    </a>
+  </div>
+  <!-- Custmer Review -->
+  <div class="container mt-5">
+    <h1 class="mt-5 text-center">What our Custmer Says ...</h1>
+    <div class="review-box d-flex">
+      <div class="cust-box p-5 text-center">
+        <img src="/assects/user.jpg" alt="" />
+        <h5 class="mt-3">Jaymin Patel, Ahemdabad</h5>
+        <img src="https://doav52ie4cv60.cloudfront.net/images/quotes.svg" alt="" width="30px" class="text-center"
+          height="30px" style="border: none" />
+        <hr style="width: 100%; background-color: orange; height: 2px" />
+        <p class="fs-4">
+          Convenient and efficient way to travel around the city
+        </p>
+        <hr style="width: 100%; background-color: orange; height: 2px" />
+      </div>
+      <div class="cust-box p-5 text-center">
+        <img src="/assects/user.jpg" alt="" />
+        <h5 class="mt-3">Rahul Shah, Vadodara</h5>
+        <img src="https://doav52ie4cv60.cloudfront.net/images/quotes.svg" alt="" width="30px" height="30px"
+          style="border: none" />
+        <hr style="width: 100%; background-color: orange; height: 2px" />
+        <p class="fs-4">
+          Affordable prices with reliable and safe transportation.
+        </p>
+        <hr style="width: 100%; background-color: orange; height: 2px" />
+      </div>
+      <div class="cust-box p-5 text-center">
+        <img src="/assects/user.jpg" alt="" />
+        <h5 class="mt-3">Kirtan Patel, Ahemdabad</h5>
+        <img src="https://doav52ie4cv60.cloudfront.net/images/quotes.svg" alt="" width="30px" height="30px"
+          style="border: none" />
+        <hr style="width: 100%; background-color: orange; height: 2px" />
+        <p class="fs-4">
+          Excellent customer service and easy booking process.
+        </p>
+        <hr style="width: 100%; background-color: orange; height: 2px" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="text-white text-center p-5" id="footer">
+    <h4>Cab O Way Rentals</h4>
+    <h5>Book Cabs,Self Drive,Outstation Trips</h5>
+    <hr style=" width: 50%; margin-left: 25%; background-color: #f5ddb1; height: 3px;"/>
+    <hr style=" width: 60%; margin-left: 20%; background-color: rgb(196, 221, 255); height: 3px;" />
+    <h3>Office Address</h3>
+    <h4>Fake Address, street, Surat, Gujarat, 395010 </h4>
+    <div class="d-flex container mt-5 justify-content-around flex-wrap">
+      <div>
+        <h4 class="text-warning">Email Address</h4>
+        <p class="fs-4">info.democab@gmail.com</p>
+      </div>
+      <div>
+        <h4 class="text-warning">Office Hours</h4>
+        <p class="fs-4">9 A.M. to 12 P.M.</p>
+      </div>
+      <div>
+        <h4 class="text-warning">Phone</h4>
+        <p class="fs-4">+91 9925347434</p>
+      </div>
+    </div>
+    <hr style="
+          width: 80%;
+          margin-left: 10%;
+          background-color: rgb(196, 221, 255);
+          height: 3px;
+        " />
+    <div>
+      <i class="fa-brands fa-instagram me-5" style="font-size: 47px; cursor: pointer"></i>
+      <i class="fa-brands fa-twitter me-5" style="font-size: 47px; cursor: pointer"></i>
+      <i class="fa-brands fa-facebook me-5" style="font-size: 47px; cursor: pointer"></i>
+    </div>
+  </div>
+  <!-- CopyWrite Footer -->
+  <div class="bg-dark" id="copywrite">
+    <h5 class="text-white">Copyright © 2023 - Demo Car Rental</h5>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script type="module">
+      const firebaseConfig = {
+        apiKey: "AIzaSyBJxOUQq6-WDM4IWhqzXuqtxn7LnCQODYg",
+        authDomain: "cab-rental-6445a.firebaseapp.com",
+        databaseURL: "https://cab-rental-6445a-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "cab-rental-6445a",
+        storageBucket: "cab-rental-6445a.appspot.com",
+        messagingSenderId: "897477891894",
+        appId: "1:897477891894:web:ae64ae37e759d05ce94597",
+        measurementId: "G-WL18LDE6EF"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a reference to the cab data in Firebase
+  const cabRef = firebase.database().ref('cab');
+  console.log(cabRef)
+  // Render the cab data in the HTML page
+  cabRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      const cabData = childSnapshot.val();
+      const cabElement = document.createElement('div');
+      cabElement.innerText = `Cab Name: ${cabData.name}, Cab Type: ${cabData.type}, Cab Driver: ${cabData.driver}`;
+      document.getElementById('cab-data').appendChild(cabElement);
+    });
+  });
+  </script>
+</body>
+
+</html>
